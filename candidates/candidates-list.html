@@ -1,0 +1,74 @@
+  
+  <div class="mainwrapper" >
+  <div class="rightpanel">
+    <!-- <div ng-sparkline ng-city="sfo"></div> -->
+    <div ng-listheader ng-entity="Candidates" is-list-empty="isListEmpty()"></div>
+      <!--pageheader-->
+
+    <div class="maincontent">
+      <div class="maincontentinner">
+     <!-- <div class="supplierTag"><p>Tag :</p><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div> -->
+     <div style="color:green;float: right;">
+     <div ng-sparkstatus ng-model="statusMessage"></div>
+    
+     </div>
+     <br clear="all" />
+      <h4 class="widgettitle"> {{statusmessage}}  </h4>
+        <table id="dyntable" class="table table-bordered responsive">
+          <colgroup>
+          <col class="con0" style="align: center; width: 4%" />
+          <col class="con1" />
+          <col class="con0" style="width:15%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="head0 nosort"><input type="checkbox" class="checkall"  ng-model="isSelectAll"/></th>
+              <th class="head1"> Details</th>
+              <th class="head0 center">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in records">
+              <td class="aligncenter"><span ><input type="checkbox" ng-click="isChkBoxSelected(user.selected)" ng-model="user.selected" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              <div class="supplierListPic" ng-class="{active:routeIs('/seller-view/{{user.id}}')}"><a href="#/view_supplier/{{user.id}}">
+              <img src="images/supplier_img.png" height="84" width="84"></a>
+              </div>
+              <div class="sellerListDetails">
+              <a ui-sref="Candidates.view({id:user.id})"><h4>{{user.name}}</h4></a>
+              <p>{{user.roll}}<span> {{user.commission}}</span></p>
+         <p>Company : {{user.commissionPercentage}} </p>
+         
+         
+         </p>
+             <!--  <div class="supplierTag"><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div> -->
+               </div>
+              </div></a>
+              </td>
+              <td class="center" >
+              <div class="supplierAction">
+              <a class="iconfa-eye-open" ui-sref="Candidates.view({id:user.id})"></a>
+              <a class="iconfa-edit" ui-sref="Candidates.edit({id:user.id})"></a>
+              <a class="iconfa-trash" ng-click="deleteRec(user,$index)" data-toggle="modal"></a>
+              
+              </div>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+        <br />
+        <br />
+             
+      </div>
+      <!--maincontentinner--> 
+     </div>
+    <!--maincontent--> 
+</div>
+  <!--rightpanel-->   
+</div>
+     <div ng-delete-item-from-list ng-entity="Candidates" bulk-delete="bulkDelete()" cancel="cancelDialog()"></div>
+
+  

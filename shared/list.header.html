@@ -1,0 +1,53 @@
+ <ul class="breadcrumbs">
+      <li><a href="#/welcome"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+      <li> {{ngEntity}}</li>
+    </ul>
+    <div class="pageheader" style="padding-top:0; padding-bottom:0;">
+<!--     <a ui-sref="{{ngEntity}}.add" class="btn btn-primary btnAdd">
+            <i class="icon-plus icon-white"></i>&nbsp; Add New </a>
+
+ -->
+
+<button class="btn btn-primary btnAdd" style="margin-top:-20px;" ui-sref="{{ngEntity}}.add">
+     <i class="icon-plus icon-white"></i>&nbsp; Add New Supplier </button>
+    <button ng-click="bulkDelete()" ng-disabled="isListEmpty()" class="btn btn-primary btnAdd" style="margin-top:-20px; right:340px;">
+     <i class="icon-plus icon-white"></i>&nbsp; Delete</button>
+
+
+<!-- <a ui-sref="{{ngEntity}}.add" class="btn btn-primary " style="margin-top:-20px;">
+            <i class="icon-plus icon-white"></i>&nbsp; Add New Supplier </a
+            
+            <a style="marign-right:340px; margin-top:-20px;" class="btn btn-primary btnAdd">
+            <i class="icon-trash icon-white" ng-click="bulkDelete()" ng-disabled="isListEmpty()"></i>&nbsp; Delete </a> -->
+
+     <div class="pagetitle" style="margin-left:0; padding:0;">
+      <span class="new-title">
+         <em id="text">Supplier</em>
+         <select id="newselect" style="display:none">
+          <option>First Supplier</option>
+          <option>Second Supplier</option>
+          <option>Third Supplier</option>
+         </select>
+         <a id="click" ng-click="filterView(1) "style="display:block;">Change View</a>
+         <a  id="click1"  ng-click="filterView(2);" style="display:none;">Cancel</a>
+        </span> 
+    <!--  <a href="#myModal" data-toggle="modal" style="right:340px;" class="btn btn-primary btnAdd" ng-disabled="isListEmpty()">
+            <i class="icon-trash icon-white"></i>&nbsp; Delete </a> -->
+         <!--  <select style="float:right" type="text">
+        <option>Filter</option>
+        <option>By Name</option>
+        <option>By Email</option>
+      </select> -->
+  <!--     <div class="pageicon"><span class="iconfa-user"></span></div> -->
+      <!-- <div class="pagetitle">
+        <h1>{{ngEntity}}</h1>
+      </div> -->
+
+</div>
+
+      
+
+
+
+
+

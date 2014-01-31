@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------- edit by vishal bansal on 1/1/2014 ----------------------*/
+.new-title{float:left; width:50%; margin:20px 0;}
+.new-title em{float:left; font-size:14px; font-style:normal; margin-right:20px;}
+
+/*--------------- edit by vishal bansal on 1/1/2014 ----------------------*/
+.new-title{float:left; width:50%; margin:20px 0;}
+.new-title em{float:left; font-size:14px; font-style:normal; margin-right:10px;}
+.new-title select{float:left; margin:0 10px 0 0}
+.new-title a{float:left; font-size:12px; font-style:normal;}
+.searchcategory{float:left; width:40%; height:25px; line-height:25px;}
+.center-section{float:left; width:81%;}
+#click1{margin-top:5px;}
+.right-section{float:left; margin-left:1%; min-height:200px; padding:2%; width:13%; background:#fff;}
+.right-section h6 {line-height: 1.0em; padding: 0 0 3px 0; font-size: 12px; text-transform: none; border-bottom: 1px solid #efefef; color: #222; font-weight: bold; width:100%; float:left; border-bottom:solid 1px #999}
+.right-section span{float:left; width:100%; margin-bottom:15px;}
+.right-section .new-tags{float:left; width:100%; }
+.right-section .new-tags li{float:left; width:100%; line-height:25px; border-bottom:solid 1px #CCC; list-style:none; padding:6px 0 6px 10px;}
+.right-section .new-tags li em{margin-left:10px; display:inline-block; font-style:normal;background:#e6e6e6; padding:3px 5px; border-radius:5px;}
+.leftpanel.w205, .leftmenu.w205{width:205px;}
+.rightpanel.ml205{margin-left:205px !important;}
+

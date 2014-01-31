@@ -1,0 +1,15 @@
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade in" id="myModal">
+    <div class="modal-header">
+        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+        <h3 id="myModalLabel">Are you sure to delete this {{ngEntity}}</h3>
+    </div>
+    <div class="modal-body">
+        <h4>Delete Candidadte</h4>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+    </div>
+    <div class="modal-footer">
+        <button data-dismiss="modal" class="btn" ng-click="cancel()" >Cancel</button> 
+        <button class="btn btn-primary" ng-click='bulkDelete()' >Yes</button>
+    </div>
+</div>  

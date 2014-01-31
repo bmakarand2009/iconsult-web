@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ><!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Grails IConsult</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.default.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.navyblue.css" type="text/css">
+    <link rel="stylesheet" href="/css/responsive-tables.css" type="text/css">
+    <link rel="stylesheet" href="/css/adv-style.css" type="text/css">
+    <link rel="stylesheet" href="/css/toastr.css" type="text/css">
+
+    <script type="text/javascript" src="js/lib/jquery/jquery-1.9.1.min.js"></script> 
+    <script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+
+</head>
+<body> 
+<div ng-controller="ParentViewController" class="auth-demo-application waiting-for-angular">
+    <div id="app-header" ng-include="'shared/header.html'" ng-show="isValidUser()"></div>
+    <!-- <div ng-include="'shared/leftmenu.html'"></div> -->
+
+ <div id="app-leftpanel" class="leftpanel w205" ng-show="isValidUser()" >       
+     <div class="leftmenu w205">
+      <ul class="nav nav-tabs nav-stacked">
+        <li class="nav-header">Navigation</li>
+        <li><a href="#/welcome"><span class="iconfa-home"></span>Welcome</a></li>
+       
+       <!--class="dropdown active" makes it go levels -->
+        <li ><a ui-sref="Candidates.list"><span class="iconfa-shopping-cart"></span>Candidates</a>
+        </li>
+        <!-- add class="dropdown" to get the dropdown-->
+        <li><a ui-sref="Vendors.list"><span class="iconfa-flag"></span>Vendors</a>
+        </li>
+        <li><a href=""><span class="iconfa-list-alt"></span>Requirments</a>
+        </li>
+        <li><a href=""><span class="iconfa-bar-chart"></span>Campaigns</a>
+        </li>
+        <li class="dropdown"><a href=""><span class="iconfa-cogs"></span>Setup</a>
+          <ul>
+            <li><a href="404.html">Digital Signed</a></li>
+            <li><a href="404.html">LOGO</a></li>
+            <li><a href="404.html">Branches</a></li>
+            <li><a href="404.html">Users</a></li>
+            <li><a href="404.html">Profiles</a></li>
+            <li><a href="404.html">Taxes</a></li>
+            <li><a href="404.html">Currency</a></li>
+            <li><a href="404.html">Units</a></li>
+            <li><a href="404.html">Payments Way</a></li>
+          </ul>
+        </li>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr>
+       
+        <li class="dropdown" ><a href=""><span class="iconfa-book"></span>Recent Activity</a>
+          <ul>
+            <li><a href="404.html">Activity 1</a></li>
+            <li><a href="404.html">Activity 2</a></li>
+            <li><a href="404.html">Activity 3</a></li>
+            <li><a href="404.html">Activity 4</a></li>
+            <li><a href="404.html">Activity 5</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+    <!--leftmenu--> 
+     <ui-view></ui-view> 
+</div> 
+
+
+  <script type="text/javascript" src="assets/jquery.assets.min.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+  <script type="text/javascript" src="assets/welcome.min.js"></script>
+  <script type="text/javascript" src="assets/admin.min.js"></script>
+  <script type="text/javascript" src="assets/shared.min.js"></script>
+
+  <script type="text/javascript" src="assets/vendor.min.js"></script> 
+  <script type="text/javascript" src="assets/candidate.min.js"></script> 
+  
+  <script type="text/javascript" src="js/directives/appDirectives.js"></script>
+  <script type="text/javascript" src="assets/utils.min.js"></script>
+  <script type="text/javascript" src="assets/angular.assets.min.js"></script>
+  <div class="footer" role="contentinfo"></div>
+  <div id="spinner" class="spinner" style="display:none;">Loading&hellip;</div>
+
+
+</body>
+</html>

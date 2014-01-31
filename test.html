@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html  ng-app="myApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Supplier | Factura - T</title>
+<link rel="stylesheet" href="css/style.default.css" type="text/css" />
+<link rel="stylesheet" href="css/style.navyblue.css" type="text/css" />
+<link rel="stylesheet" href="css/responsive-tables.css">
+<link rel="stylesheet" href="css/adv-style.css" type="text/css">
+<link rel="stylesheet" href="css/toastr.css" type="text/css">
+
+<script type="text/javascript" src="js/lib/jquery/jquery-1.9.1.min.js"></script> 
+<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+   // jQuery(document).ready(function(){
+   //   console.log("javascript loaded");
+   //    $('#test2').click(function(){
+   //      alert("hello world");
+   //      //toastr.success("hello I am clicked");
+   //    });
+   // });
+</script>
+</head>
+
+<body>
+
+<div ng-controller="MyTestController">
+    <div id="app-header" ng-include="'shared/header.html'"></div>
+
+    <h1> hello  {{parentTest}}</h1>
+    <input id="test1" ng-model="parentTest"/>
+    <br>
+    <button id="test2" ng-click="awesomeFunc()"> Awesome {{parentTest}}</button>
+
+    <h4>Static arrays</h4>
+    <pre>Model: {{selected | json}}</pre>
+    <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+
+   <h4>Asynchronous results</h4>
+    <pre>Model: {{asyncSelected | json}}</pre>
+    <input type="text" ng-model="asyncSelected" placeholder="Locations loaded via $http" typeahead="address for address in getLocation($viewValue) | filter:$viewValue" typeahead-loading="loadingLocations" class="form-control">
+    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+
+  <h4>FindByCityZip results</h4>
+    <pre>Model: {{asyncSelected2 | json}}</pre>
+    <input type="text" ng-model="asyncSelected2" placeholder="Locations loaded via $http" typeahead="addr.label for addr in autoFillLocation($viewValue) | filter:$viewValue" typeahead-loading="loadingLocations" class="form-control">
+    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+
+    <div>
+   <button id="dateDlgTest" ng-click="launchDateDialog()"> Date Dialog  </button>
+    </div>
+
+     <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+</div>
+
+ 
+<script type="text/javascript" src="assets/jquery.assets.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="assets/welcome.min.js"></script>
+<script type="text/javascript" src="assets/admin.min.js"></script>
+<script type="text/javascript" src="assets/shared.min.js"></script>
+
+<script type="text/javascript" src="assets/vendor.min.js"></script> 
+<script type="text/javascript" src="assets/candidate.min.js"></script> 
+
+<script type="text/javascript" src="js/directives/appDirectives.js"></script>
+<script type="text/javascript" src="assets/utils.min.js"></script>
+<script type="text/javascript" src="assets/angular.assets.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+
+
+<div class="header">
+    <div class="logo"> <a href="#/welcome"><img src="images/logo1.png" alt="" /></a> </div>
+    <div class="headerinner">
+      <ul class="headmenu">
+        <li class="headBtn">
+           <button onClick="window.location.href = 'add_supplier.html';" name="submit"><span class="iconfa-plus"></span> Add Supplier</button>
+        </li>
+        <li class="headBtn">
+          <button name="submit"><span class="iconfa-plus"></span> New Task</button>
+        </li>
+        <li class="headBtn">
+          <div class="searchIcon"><a href="#"><span class="iconfa-search"></span></a></div>
+         <!-- 
+          <input type="text" style="padding-left:25px;" placeholder="Default Search..." auto-complete ng-model="term"> -->
+           <input type="text" ng-model="asyncSelected3" placeholder="Locations loaded via $http" typeahead="addr for addr in autoFillJump($viewValue) | filter:$viewValue" typeahead-loading="loadingLocations" class="form-control">
+           <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+        </li>
+        <li class="right">
+          <div class="userloggedinfo"> <img src="images/photos/thumb1.png" alt="" />
+            <div class="userinfo">
+              <h5>User Name <small>- demo@democompany.com</small></h5>
+              <ul>
+                <li><a href="404.html">Help</a></li>
+                <li><a href="404.html">Account Settings</a></li>
+                <li><a ng-click="logout()">Sign Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!--headmenu--> 
+    </div>
+    </div>
+    

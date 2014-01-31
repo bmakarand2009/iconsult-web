@@ -1,0 +1,37 @@
+{
+  "name": "iconsult",
+  "version": "1.0.0",
+  "description": "Managing javascripts",
+  "main": "index.gsp",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/makrand-bkar/iconsult.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "https://twitter.com/MakBkar",
+  "license": "private",
+  "bugs": {
+    "url": "https://github.com/makrand-bkar/iconsult/issues"
+  },
+  "homepage": "https://github.com/makrand-bkar/iconsult",
+
+ "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.3",
+    "grunt-contrib-uglify": "~0.2.0", 
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-connect-proxy": "~0.1.6",
+    "matchdep": "~0.1.2"
+  }
+
+
+
+}

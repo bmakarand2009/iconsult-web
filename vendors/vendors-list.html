@@ -1,0 +1,58 @@
+  <div class="mainwrapper" >
+  <div class="rightpanel">
+  <div ng-listheader ng-entity="Vendors" is-list-empty="isListEmpty()" bulk-delete="bulkDelete()"></div>
+      <!--pageheader-->
+
+    <div class="maincontent">
+      <div class="maincontentinner">
+        <!-- added by me -->
+        
+    <input type="text" class="searchcategory span7" placeholder="Search by City or name or place or skills"  ng-model="searchText">
+      
+         <div class="center-section">
+           <h4 class="widgettitle" style= "width:615px">Select supplier to add tags, change who can see them, or delete. </h4>
+             <!-- added by me -->
+             <style type="text/css">
+              .dnone .fg-toolbar.ui-toolbar.ui-widget-header.ui-corner-tl.ui-corner-tr.ui-helper-clearfix{display: none;}
+             </style>
+<div id="dyntable_wrapper" class="dnone">
+        <table  id="dyntable" my-table options="options" dtable="dtable" class="table table-bordered responsive">
+          <colgroup>
+          <col class="con0" style="align: center; width: 4%" />
+          <col class="con1" />
+          <col class="con0" style="width:15%" />
+          </colgroup>
+          <thead>
+            <tr>
+
+              <th class="mycol1 head0 nosort" ><input type="checkbox" class="checkall"  ng-model="isSelectAll"/></th>
+              <th class="mycol2 head1" > Details</th>
+              <!-- <th class="mycol3 head0 center">Action</th> -->
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+         </table>
+        <br />
+        <br />
+             
+      </div>
+     </div>
+     <div class="right-section">
+         <h6>Easy in Easy Out</h6>
+         <span><a href="javascript:;">Import</a> or <a href="javascript:;"> your contacts</a></span>
+         <ul class="new-tags">
+          <li>J <em>java</em></li>
+          <li>T<em>test 4</em></li>
+          <li>W <em>west</em></li>
+         </ul>
+        </div>
+</div>
+  <!--rightpanel-->   
+
+</div>
+
+
+     <div ng-delete-item-from-list ng-entity="Candidates" bulk-delete="bulkDelete()" cancel="cancelDialog()"></div>
+
+  

@@ -1,0 +1,99 @@
+  <div class="rightpanel">
+    <ul class="breadcrumbs">
+      <li><a ui-sref="home"></a><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+      <li><a ui-sref="Vendors.list">Vendors</a> <span class="separator"></span></li>
+      <li>Add Vendor</li>
+    </ul>
+    <div class="pageheader"> 
+    <a class="btn btn-primary btnAdd" style="right:40px;" ui-sref="Vendors.list"> <i class="icon-chevron-left icon-white"></i>&nbsp; Back</a>
+    <a class="btn btn-primary btnAdd" style="right:140px;" href="javascript:void(0);" ng-click="saveNewRecord()"> <i class="iconfa-save icon-white"></i>&nbsp; Save</a>
+      <div class="pageicon"><span class="iconfa-plus"></span></div>
+      <div class="pagetitle">
+        <h1>Add Vendor</h1>
+      </div>
+    </div>
+    <!--pageheader-->
+    
+    <div class="maincontent">
+      <div class="maincontentinner">
+        <div class="widgetbox box-inverse">
+          <h4 class="widgettitle">Create New Vendor Account</h4>
+          <div class="widgetcontent nopadding">
+            <form action="" method="post" class="stdform stdform2">
+              <p>
+                <label>Name</label>
+                <pre>Model: {{selected | json}}</pre>
+
+                <span class="field">
+                <!-- <input type="text" class="input-xxlarge" id="" name="Name" ng-model="vendor.name" required> -->
+                <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+
+                </span> </p>
+              <p>
+              <p>
+                <label> Contacts</label>
+                <div ng-repeat="contact in vendor.contacts">
+                   <span class="field">
+                    <select ng-model="contact.type">
+                      <option>email</option>
+                      <option>work</option>
+                      <option>cell</option>
+                      <option>home</option>
+                      <option>skype</option>
+                      <option>IM</option>
+                    </select>
+                    <input type="text" ng-model="contact.value" required/>
+                    [ <a href="" ng-click="removeContact($index)">X</a> ]
+                  </span>
+                </div>
+                <span class="field">
+                <br /><a href="" ng-click="addContact()">Add Another</a>
+              </span>
+              </p>
+              
+
+              <p>
+                <label>Location </label>
+                <span class="field"> <span>
+                <input type="text" name="line1" placeholder="enter street" ng-model="vendor.location.street">
+                </span> &nbsp; 
+                <span>
+                    <input type="text" ng-model="asyncSelected2" placeholder="Locations loaded via $http" typeahead="addr.label for addr in autoFillLocation($viewValue) | filter:$viewValue" typeahead-loading="loadingLocations" class="form-control">
+                    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+                </span>
+                  
+              <p>
+                <label>Comments</label>
+                <span class="field">
+                <textarea class="input-xxlarge"  placeholder="enter description" rows="3" ng-model="vendor.comments" required/>
+                </span> </p>       
+                
+            </form>
+          </div>
+          <!--widgetcontent--> 
+        </div>
+        
+        <p class="stdformbutton">
+          <button class="btn btn-primary" ng-click="saveNewRecord()">Save</button>
+          <!--<button class="btn" type="reset">Reset</button>-->
+        </p>
+        <div class="footer">
+           <pre>form={{vendor}}</pre>
+          <!-- <div class="footer-left"> <span>&copy; 2013.  All Rights Reserved.</span> </div> -->
+          <!-- <div class="footer-right"> <span>Designed by: <a href=""></a></span> </div> -->
+        </div>
+        <!--footer--> 
+        
+      </div>
+      <!--maincontentinner--> 
+    </div>
+    <!--maincontent--> 
+    
+  </div>
+  <!--rightpanel--> 
+  
+</div>
+<!--mainwrapper-->
+
+</body>
+</html>
