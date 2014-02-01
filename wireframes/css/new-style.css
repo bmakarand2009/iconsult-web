@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*--------------- edit by vishal bansal on 1/1/2014 ----------------------*/
+.new-title{float:left; width:50%; margin:20px 0;}
+.new-title em{float:left; font-size:14px; font-style:normal; margin-right:20px;}
+
+/*--------------- edit by vishal bansal on 1/1/2014 ----------------------*/
+.new-title{float:left; width:50%; margin:20px 0;}
+.new-title em{float:left; font-size:14px; font-style:normal; margin-right:10px;}
+.new-title select{float:left; margin:0 10px 0 0}
+.new-title a{float:left; font-size:12px; font-style:normal;}
+.searchcategory{float:left; width:40%; height:25px; line-height:25px;}
+.center-section{float:left; width:81%;}
+#click1{margin-top:5px;}
+.right-section{float:left; margin-left:1%; min-height:200px; padding:2%; width:13%; background:#fff;}
+.right-section h6 {line-height: 1.0em; padding: 0 0 3px 0; font-size: 12px; text-transform: none; border-bottom: 1px solid #efefef; color: #222; font-weight: bold; width:100%; float:left; border-bottom:solid 1px #999}
+.right-section span{float:left; width:100%; margin-bottom:15px;}
+.right-section .new-tags{float:left; width:100%; }
+.right-section .new-tags li{float:left; width:100%; line-height:25px; border-bottom:solid 1px #CCC; list-style:none; padding:6px 0 6px 10px;}
+.right-section .new-tags li em{margin-left:10px; display:inline-block; font-style:normal;background:#e6e6e6; padding:3px 5px; border-radius:5px;}
+.leftpanel.w205, .leftmenu.w205{width:205px;}
+.rightpanel.ml205{margin-left:205px !important;}
+/* css edit on 02-01-2013 */
+.pagetitle.ml0{margin-left:0;}
+.supplierTag.margintop10{margin-top:10px;}
+.supplierTag .edittag{background:none; color:red !important; font-size:13px;}
+.view-supplier{float:left; background:#fff;}
+.view-supplier .w20{width:20%}
+.widgettitle.clear{clear:both;}
+.view-supplier .view-left{float:left; width:95%; position:relative; padding:2% 10px;}
+.view-supplier .view-left a.edit{float:right; margin:0 0 5px; color:#999; width:100%; text-align:right;}
+.view-supplier .view-left .left-listing{float:left; width:100%; min-height:300px;}
+.view-supplier .view-left .left-listing li{float:left; width:100%; list-style:none; margin-bottom:5px;}
+.view-supplier .view-left a{float:left; width:88%;padding-left:28px; line-height:14px;}
+.view-supplier .view-left a.email{background:url(../mail.png) left top no-repeat;}
+.view-supplier .view-left a.home{background:url(../home.png) left top no-repeat; color:#000;}
+.view-supplier .view-left a.home:hover{text-decoration:none;}
+.view-supplier .view-left .show a{width:auto;}
+.view-supplier .right ul li input[type=checkbox], .view-supplier .view-left li input[type=checkbox]{border:solid 1px #999; opacity:1!important; float:left; margin-right:7px;}
+.view-supplier .view-left li #uniform-undefined{float:left}
+.view-supplier .view-left li em{font-style:normal; margin-top:3px; float:left; font-weight:bold;}
+.view-supplier .center-section{min-height:200px; float:left; width:98%;}
+.view-supplier .center-section span{margin-left:0; padding:2% 0; background:#F3F1EC}
+.view-supplier .center-section span em{float:left; font-style:normal; width:100%; text-align:center; padding:2% 0}
+.view-supplier .center-section span.section{float:left; width:33%;}
+.view-supplier .center-section span em.last-contact{color:#666; font-size:13px; font-weight:bold;}
+.view-supplier .center-section span em.last-contact.red, .view-supplier .center-section span em.nohistory.red{color:#900; font-weight:normal;}
+.view-supplier .center-section span.backgroundnone{background:none; padding-top:0}
+.view-supplier .center-section span.fr{float:right;}
+.view-supplier .center-section span ul{float:left; width:100%;}
+.view-supplier .center-section span ul li{float:left; width:98%; margin:0 0 1% 0; list-style:none;}
+.view-supplier .center-section span ul li span em{float:left; width:auto; text-align:left; color:#CCC; padding:0}
+.TabbedPanels {overflow:hidden; margin:20px 0 0 0; float:left; padding:0px; clear:none; width:100%;}
+.TabbedPanelsTabGroup {margin:0px; padding:0px;}
+.TabbedPanelsTab {position: relative; top: 1px; float: left; padding: 4px 10px; margin: 0px 1px 0px 0px; font: bold 11px Arial, Helvetica, sans-serif; background-color: #fff; list-style: none; border-left: solid 1px #CCC; border-bottom: solid 1px #999; border-top: solid 1px #999; border-right: solid 1px #999; -moz-user-select: none; -khtml-user-select: none; cursor: pointer;  border-radius:5px 5px 0 0; margin-right:10px; border-bottom:0}
+.TabbedPanelsTabHover {background-color: #CCC;}
+.TabbedPanelsTabSelected {background-color: #fff; border-bottom: 1px solid #fff;}
+.TabbedPanelsTab a {color: black; text-decoration: none;}
+.TabbedPanelsContentGroup {clear: both; border-left: solid 1px #fff; border-bottom: solid 1px #fff; border-top: solid 1px #fff; border-right: solid 1px #fff; background-color: #fff;}
+.TabbedPanelsContent {overflow: hidden; padding: 4px; min-height:200px;}
+.TabbedPanelsContentVisible {}
+.VTabbedPanels {overflow: hidden; zoom: 1;}
+.VTabbedPanels .TabbedPanelsTabGroup {float: left; width: 10em; height: 20em; background-color: #EEE; position: relative; border-top: solid 1px #999; border-right: solid 1px #999; border-left: solid 1px #CCC; border-bottom: solid 1px #CCC; }
+.VTabbedPanels .TabbedPanelsTab {float: none; margin: 0px; border-top: none; border-left: none; border-right: none;}
+.VTabbedPanels .TabbedPanelsTabSelected {background-color: #EEE; border-bottom: solid 1px #999;}
+.VTabbedPanels .TabbedPanelsContentGroup {clear: none; float: left; padding: 0px; width: 30em; height: 20em;}
+.TabbedPanelsContent h6{margin:10px 0}
+.span11.view-supplier{padding-top:1%}
+.view-supplier .heading{float:left; width:90%; background:#3B6C8E; padding:3% 8%} 
+.view-supplier .heading em{float:left; font-style:normal; color:#fff}
+.view-supplier .heading a{float:right; color:#fff}
+.view-supplier .right ul{float:left; width:100%; margin-top:10px; padding-left:10px;}
+.view-supplier .right ul li{float:left; list-style:none; margin-bottom:7px;}
+.view-supplier .span2.right p{float:right; width:145px; margin-top:5px;}
+.supplierTag #addtags{float:left; width:100%; margin-top:10px;}
+.supplierTag #addtags p{float:left; width:100%; font-size:12px;}
+.supplierTag #addtags input[type=text], .supplierTag #addtags a, .supplierTag #addtags em{float:left; margin:0 5px; background:none; font-style:normal;}
+.supplierTag #addtags a{padding:0}
+.pageheader.w94{max-width:100%; width:94.4%; display:inline-block;}

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Supplier | Factura - T</title>
+<link rel="stylesheet" href="css/style.default.css" type="text/css" />
+<link rel="stylesheet" href="css/style.navyblue.css" type="text/css" />
+<link rel="stylesheet" href="css/responsive-tables.css">
+<script type="text/javascript" src="js/lib/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery-ui-1.9.2.min.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/lib/modernizr.min.js"></script>
+<script type="text/javascript" src="js/lib/responsive-tables.js"></script>
+<script type="text/javascript" src="js/lib/custom.js"></script>
+<!-- edited by vishal bansal --->
+<script src="js/showhide.js"></script>
+<link rel="stylesheet" type="text/css" href="css/new-style.css">
+<!-- edit finish by vishal bansal -->
+</head>
+
+<body>
+<div class="mainwrapper">
+  <div class="header">
+    <div class="logo"> <a href="welcome.html"><img src="images/logo.png" alt="" /></a> </div>
+    <div class="headerinner">
+      <ul class="headmenu">
+        <li class="headBtn">
+           <button onClick="window.location.href = 'add_supplier.html';" name="submit"><span class="iconfa-plus"></span> Add Supplier</button>
+        </li>
+        <li class="headBtn">
+          <button name="submit"><span class="iconfa-plus"></span> New Task</button>
+        </li>
+        <li class="headBtn">
+          <div class="searchIcon"><a href="#"><span class="iconfa-search"></span></a></div>
+          <input type="text" style="padding-left:25px;" placeholder="To search type and hit enter" >
+        </li>
+        <li class="right">
+          <div class="userloggedinfo"> <img src="images/photos/thumb1.png" alt="" />
+            <div class="userinfo">
+              <h5>User Name <small>- demo@democompany.com</small></h5>
+              <ul>
+                <li><a href="404.html">Help</a></li>
+                <li><a href="404.html">Account Settings</a></li>
+                <li><a href="index.html">Sign Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!--headmenu--> 
+    </div>
+  </div>
+  <div class="leftpanel w205">
+    <div class="leftmenu w205">
+      <ul class="nav nav-tabs nav-stacked">
+        <li class="nav-header">Navigation</li>
+        <li><a href="welcome.html"><span class="iconfa-home"></span>Welcome</a></li>
+       
+        <li class="active"><a href=""><span class="iconfa-shopping-cart"></span>Candidates</a>
+        </li>
+        <li class="dropdown"><a href=""><span class="iconfa-flag"></span>Vendors</a>
+        </li>
+        <li><a href=""><span class="iconfa-bar-chart"></span>Requirments</a>
+        </li>
+
+        <li><a href=""><span class="iconfa-bar-chart"></span>Campaigns</a>
+        </li>
+        <li class="dropdown"><a href=""><span class="iconfa-cogs"></span>Setup</a>
+          <ul>
+            <li><a href="404.html">Users</a></li>
+            <li><a href="404.html">Profiles</a></li>
+            <li><a href="404.html">Taxes</a></li>
+            <li><a href="404.html">Payments Way</a></li>
+          </ul>
+        </li>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr>
+        <li class="dropdown" ><a href=""><span class="iconfa-book"></span>Recent Activity</a>
+          <ul>
+            <li><a href="404.html">Activity 1</a></li>
+            <li><a href="404.html">Activity 2</a></li>
+            <li><a href="404.html">Activity 3</a></li>
+            <li><a href="404.html">Activity 4</a></li>
+            <li><a href="404.html">Activity 5</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--leftmenu--> 
+    
+  </div>
+  <!-- leftpanel -->
+  
+  <div class="rightpanel ml205">
+    <ul class="breadcrumbs">
+      <li><a href="welcome.html"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+      <li>Supplier</li>
+    </ul>
+    <div class="pageheader" style="padding-top:0; padding-bottom:0;">
+    <a href="add_supplier.html" class="btn btn-primary btnAdd" style="margin-top:-20px;">
+            <i class="icon-plus icon-white"></i>&nbsp; Add New Supplier </a>
+            
+            
+            <a href="#myModal" data-toggle="modal" style="right:340px; margin-top:-20px;" class="btn btn-primary btnAdd">
+            <i class="icon-trash icon-white"></i>&nbsp; Delete </a>
+      
+      <!-- <div class="pageicon"><span class="iconfa-user"></span></div> -->
+      <div class="pagetitle" style="margin-left:0; padding:0;">
+
+       <!-- edited by vishal bansal on 1/1/2013 -->
+        <span class="new-title">
+         <em id="text">Supplier</em>
+         <select id="newselect" style="display:none">
+          <option>First Supplier</option>
+          <option>Second Supplier</option>
+          <option>Third Supplier</option>
+         </select>
+         <a href="javascript:;" id="click" onClick="admin(1);" style="display:block;">Change View</a>
+         <a href="javascript:;" id="click1" onClick="admin(2);" style="display:none;">Cancel</a>
+        </span> 
+       <!-- edited by vishal bansal on 1/1/2013 -->
+      </div>
+    </div>
+    <!--pageheader-->
+    
+    <div class="maincontent">
+      <div class="maincontentinner">
+     
+     <input type="text" value="Search by City or name or place or skills" class="searchcategory span4" onClick="this.value=''" onBlur="this.value='Search by City or name or place or skills'">
+        <!-- sdited by vishal -->
+        <div class="center-section">
+         <h4 class="widgettitle">Select supplier to add tags, change who can see them, or delete. </h4>
+         <table id="dyntable" class="table table-bordered responsive">
+          <colgroup>
+          <col class="con0" style="align: center; width: 4%" />
+          <col class="con1" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="head0 nosort"><input type="checkbox" class="checkall" /></th>
+              <th class="head1">Supplier Details</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User Name</h4></a>
+              <p>Company name</p>
+			  <p>demo@democompanyname.com<span> 040125455524</span></p>
+              <div class="supplierTag"><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div></a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User2 Name2</h4></a>
+              <p>Company name2</p>
+			  <p>demo@democompanyname.com<span> 2556689855</span></p>
+              <div class="supplierTag"><a href="#">flash</a><a href="#">flag</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+              <a href="view_supplier.html">
+              
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"> <h4>User3 Name3</h4></a>
+              <p>Company name3</p>
+			  <p>demo@democompanyname3.com<span> </span></p>
+              <div class="supplierTag"><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User Name</h4></a>
+              <p>Company name</p>
+			  <p>demo@democompanyname.com<span> 040125455524</span></p>
+              <div class="supplierTag"><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div></a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User2 Name2</h4></a>
+              <p>Company name2</p>
+			  <p>demo@democompanyname.com<span> 2556689855</span></p>
+              <div class="supplierTag"><a href="#">flash</a><a href="#">flag</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+              <a href="view_supplier.html">
+              
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"> <h4>User3 Name3</h4></a>
+              <p>Company name3</p>
+			  <p>demo@democompanyname3.com<span> </span></p>
+              <div class="supplierTag"><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User Name</h4></a>
+              <p>Company name</p>
+			  <p>demo@democompanyname.com<span> 040125455524</span></p>
+              <div class="supplierTag"><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div></a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User2 Name2</h4></a>
+              <p>Company name2</p>
+			  <p>demo@democompanyname.com<span> 2556689855</span></p>
+              <div class="supplierTag"><a href="#">flash</a><a href="#">flag</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+              <a href="view_supplier.html">
+              
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"> <h4>User3 Name3</h4></a>
+              <p>Company name3</p>
+			  <p>demo@democompanyname3.com<span> </span></p>
+              <div class="supplierTag"><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User Name</h4></a>
+              <p>Company name</p>
+			  <p>demo@democompanyname.com<span> 040125455524</span></p>
+              <div class="supplierTag"><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div></a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User2 Name2</h4></a>
+              <p>Company name2</p>
+			  <p>demo@democompanyname.com<span> 2556689855</span></p>
+              <div class="supplierTag"><a href="#">flash</a><a href="#">flag</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+              <a href="view_supplier.html">
+              
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"> <h4>User3 Name3</h4></a>
+              <p>Company name3</p>
+			  <p>demo@democompanyname3.com<span> </span></p>
+              <div class="supplierTag"><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User Name</h4></a>
+              <p>Company name</p>
+			  <p>demo@democompanyname.com<span> 040125455524</span></p>
+              <div class="supplierTag"><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div></a>
+              </td>
+              
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User2 Name2</h4></a>
+              <p>Company name2</p>
+			  <p>demo@democompanyname.com<span> 2556689855</span></p>
+              <div class="supplierTag"><a href="#">flash</a><a href="#">flag</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+              <a href="view_supplier.html">
+              
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"> <h4>User3 Name3</h4></a>
+              <p>Company name3</p>
+			  <p>demo@democompanyname3.com<span> </span></p>
+              <div class="supplierTag"><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User Name</h4></a>
+              <p>Company name</p>
+			  <p>demo@democompanyname.com<span> 040125455524</span></p>
+              <div class="supplierTag"><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div></a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User2 Name2</h4></a>
+              <p>Company name2</p>
+			  <p>demo@democompanyname.com<span> 2556689855</span></p>
+              <div class="supplierTag"><a href="#">flash</a><a href="#">flag</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+              <a href="view_supplier.html">
+              
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"> <h4>User3 Name3</h4></a>
+              <p>Company name3</p>
+			  <p>demo@democompanyname3.com<span> </span></p>
+              <div class="supplierTag"><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User Name</h4></a>
+              <p>Company name</p>
+			  <p>demo@democompanyname.com<span> 040125455524</span></p>
+              <div class="supplierTag"><a href="#">java</a><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div></a>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+                   
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"><h4>User2 Name2</h4></a>
+              <p>Company name2</p>
+			  <p>demo@democompanyname.com<span> 2556689855</span></p>
+              <div class="supplierTag"><a href="#">flash</a><a href="#">flag</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </td>
+              
+            </tr>
+            <tr>
+              <td class="aligncenter"><span ><input type="checkbox" /></span></td>
+              <td>
+              <a href="view_supplier.html">
+              
+              <div class="supplierList">
+              
+              <div class="supplierListDetails">
+              <a href="view_supplier.html"> <h4>User3 Name3</h4></a>
+              <p>Company name3</p>
+			  <p>demo@democompanyname3.com<span> </span></p>
+              <div class="supplierTag"><a href="#">west</a><a href="#">tag2</a><a href="#">java</a></div>
+               </div>
+              </div>
+              </a>
+              </td>
+              
+            </tr>
+             
+           
+            
+            
+          </tbody>
+        </table>
+       </td>
+        <br />
+        <br />
+        <div class="footer">
+          <div class="footer-left"> <span>&copy; 2013. Factura - T. All Rights Reserved.</span> </div>
+        </div>
+        <!--footer--> 
+        
+      </div>
+        <div class="right-section">
+         <h6>Easy in Easy Out</h6>
+         <span><a href="javascript:;">Import</a> or <a href="javascript:;"> your contacts</a></span>
+         <ul class="new-tags">
+          <li>J <em>java</em></li>
+          <li>T<em>test 4</em></li>
+          <li>W <em>west</em></li>
+         </ul>
+        </div>
+      <!-- edit finish by vishal -->
+      <!--maincontentinner--> 
+    </div>
+    <!--maincontent--> 
+    
+  </div>
+  <!--rightpanel--> 
+  
+</div>
+<!--mainwrapper-->
+<div aria-hidden="false" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade in" id="myModal">
+    <div class="modal-header">
+        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
+        <h3 id="myModalLabel">Are you sure to delete this supplier</h3>
+    </div>
+    <div class="modal-body">
+        <h4>Text in a Popup</h4>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
+        <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+    </div>
+    <div class="modal-footer">
+        <button data-dismiss="modal" class="btn">Cancel</button>
+        <button class="btn btn-primary">Yes</button>
+    </div>
+</div>
+</body>
+</html>
