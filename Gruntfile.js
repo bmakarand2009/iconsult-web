@@ -13,14 +13,14 @@ module.exports = function(grunt) {
       dev: {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> version: <%= pkg.version %> \n author: <%= pkg.author %> */\n',
-          mangle: false,
+          mangle: true,
           //mangle:true,
-          compress: false, 
+          compress: true, 
           //compress:true,
           sourceMap: 'web-app/assets/sources.min.js.map',
           //delete preservecomments for prod
           preserveComments: 'all', 
-          beautify: true, 
+          beautify: false, 
         },
         files: {
           'assets/welcome.min.js': [

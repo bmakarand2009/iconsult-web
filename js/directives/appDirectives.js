@@ -19,7 +19,7 @@ myApp.directive('ngListheader', [function() {
       bulkDelete: '&',
       searchText :'@'
     },
-    templateUrl: '/shared/list.header.html',
+    templateUrl: 'shared/list.header.html',
     controller: function($scope) {
      
 
@@ -43,7 +43,7 @@ myApp.directive('ngListheader', [function() {
 myApp.directive('ngDeleteItemFromList', function() {
   return {
     restrict: 'EA',
-    templateUrl: '/shared/deleteModalDialogForList.html',
+    templateUrl: 'shared/deleteModalDialogForList.html',
     require: '^ngEntity',
     scope: {
        ngEntity : '@',

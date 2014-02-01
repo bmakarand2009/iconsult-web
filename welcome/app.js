@@ -16,7 +16,7 @@ var myApp = angular.module('myApp', ['ngResource','ui.router','http-auth-interce
 
 myApp.constant(
     'appConstants', {
-        baseUrl : '/',
+        baseUrl : '/iconsult/',
         candEntity: 'candidates',
         vendEntity: 'vendors'
 });
