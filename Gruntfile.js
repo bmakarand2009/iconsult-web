@@ -21,44 +21,43 @@ module.exports = function(grunt) {
           //delete preservecomments for prod
           preserveComments: 'all', 
           beautify: true, 
-
         },
         files: {
-          'web-app/assets/welcome.min.js': [
-            'web-app/welcome/app.js',
-            'web-app/welcome/routes.js',            
+          'assets/welcome.min.js': [
+            'welcome/app.js',
+            'welcome/routes.js',            
           ],
-          'web-app/assets/admin.min.js': [
-            'web-app/admin/admin.service.js',
-            'web-app/admin/admin.login.controller.js',
-            'web-app/admin/admin.parent.controller.js',  
-            'web-app/admin/admin.mytest.controller.js',  
+          'assets/admin.min.js': [
+            'admin/admin.service.js',
+            'admin/admin.login.controller.js',
+            'admin/admin.parent.controller.js',  
+            'admin/admin.mytest.controller.js',  
                      
           ],
-          'web-app/assets/shared.min.js': [
-            'web-app/shared/shared.restmaster.service.js',
-            'web-app/shared/shared.tableData.service.js',
-            'web-app/shared/shared.records.controller.js',
-            'web-app/shared/shared.jquery.datatable.controller.js',
-            'web-app/shared/module.js',   
-            'web-app/shared/shared.service.js',    
+          'assets/shared.min.js': [
+            'shared/shared.restmaster.service.js',
+            'shared/shared.tableData.service.js',
+            'shared/shared.records.controller.js',
+            'shared/shared.jquery.datatable.controller.js',
+            'shared/module.js',   
+            'shared/shared.service.js',    
 
           ],
-          'web-app/assets/vendor.min.js': [
-            'web-app/vendors/vendors.controllers.js',
-            'web-app/vendors/test.js'
+          'assets/vendor.min.js': [
+            'vendors/vendors.controllers.js',
+            'vendors/test.js'
           ],
-          'web-app/assets/candidate.min.js': [
-            'web-app/candidates/candidates.controllers.js',
+          'assets/candidate.min.js': [
+            'candidates/candidates.controllers.js',
           ],
-          'web-app/assets/utils.min.js': [
-            'web-app/utils/http-auth-interceptor.js',
-            'web-app/utils/createDialog.js',
-            'web-app/utils/toastr.js',
-            'web-app/utils/ui-bootstap-tmpls.js',
-            'web-app/utils/ui.typeahead.js',
-            'web-app/utils/xeditable.js',
-            'web-app/utils/ui-bootstrap-tpls-0.9.0.js',
+          'assets/utils.min.js': [
+            'utils/http-auth-interceptor.js',
+            'utils/createDialog.js',
+            'utils/toastr.js',
+            'utils/ui-bootstap-tmpls.js',
+            'utils/ui.typeahead.js',
+            'utils/xeditable.js',
+            'utils/ui-bootstrap-tpls-0.9.0.js',
           ],
 
         }
@@ -67,20 +66,21 @@ module.exports = function(grunt) {
         options: {
           mangle: false,
           compress: false,
+
         },
         files: {
-          'web-app/assets/jquery.assets.min.js': [
-            'web-app/js/lib/jquery/jquery-migrate-1.1.1.min.js',
-            'web-app/js/lib/jquery/jquery-ui-1.9.2.min.js',  
-            'web-app/js/lib/bootstrap/bootstrap.min.js',
-            'web-app/js/lib/jquery/jquery.cookie.js',
-            'web-app/js/lib/jquery/jquery.uniform.min.js',
-            'web-app/js/lib/flot/jquery.flot.min.js',
-            'web-app/js/lib/flot/jquery.flot.resize.min.js',
-            'web-app/js/lib/jquery/jquery.dataTables.min.js',
-            'web-app/js/lib/modernizr.min.js',
-            'web-app/js/lib/responsive-tables.js',
-            'web-app/js/lib/custom.js'
+          'assets/jquery.assets.min.js': [
+            'js/lib/jquery/jquery-migrate-1.1.1.min.js',
+            'js/lib/jquery/jquery-ui-1.9.2.min.js',  
+            'js/lib/bootstrap/bootstrap.min.js',
+            'js/lib/jquery/jquery.cookie.js',
+            'js/lib/jquery/jquery.uniform.min.js',
+            'js/lib/flot/jquery.flot.min.js',
+            'js/lib/flot/jquery.flot.resize.min.js',
+            'js/lib/jquery/jquery.dataTables.min.js',
+            'js/lib/modernizr.min.js',
+            'js/lib/responsive-tables.js',
+            'js/lib/custom.js'
           ]
         }
       },
@@ -90,10 +90,11 @@ module.exports = function(grunt) {
           compress: false,
         },
         files: {
-          'web-app/assets/angular.assets.min.js': [
-             'web-app/js/lib/angular/angular-resource.min.js',
-             'web-app/js/lib/angular/angular-cookies.min.js',
-             'web-app/js/lib/angular-ui-router/release/angular-ui-router.min.js',
+          'assets/angular.assets.min.js': [
+             'js/lib/angular/angular-resource.min.js',
+             'js/lib/angular/angular-cookies.min.js',
+             'js/lib/angular/angular-route.min.js',
+             'js/lib/angular-ui-router/release/angular-ui-router.min.js',
           ]
         }
       },
