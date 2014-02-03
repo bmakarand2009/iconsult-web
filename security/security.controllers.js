@@ -5,7 +5,7 @@ Application.Security.controller('SecurityLoginCtrl', function ($scope,$rootScope
   $scope.init = function(){
     var data ="login screen is on"
 
-    if($state.current.name === 'home'){
+    if($state.current.name === routerStates.home){
           //check if user is already logged in
           var aCode = $cookieStore.get('authCode');
           if(aCode.length >13){

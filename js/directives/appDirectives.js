@@ -103,41 +103,6 @@ myApp.directive('myTable', function () {
 });
 
 
-/**
-* This directive will find itself inside HTML as a class,
-* and will remove that class, so CSS will remove loading image and show app content.
-* It is also responsible for showing/hiding login form.
-*/
-myApp.directive('authDemoApplication', ['$state','$cookieStore' , function($state,$cookieStore) {
-    return {
-      restrict: 'C',
-      link: function(scope, elem, attrs) {
-        //once Angular is started, remove class:
-        elem.removeClass('waiting-for-angular');
-        
-        //var login = elem.find('#login-holder');
-        //var main = elem.find('#content');
-        //login.hide();
-        scope.$on('event:auth-loginRequired', function() {
-            if(  $state.current.name == 'login'){
-              alert("Invalid Credentials , Login again")
-              $cookieStore.put('status','Invalid Credentials, Login Again')
-            }else{
-              alert("Enter User Credentials ")
-              $cookieStore.put('status','Enter Credentials')
-            }
-            $state.go('login')
-        });
-        scope.$on('event:auth-loginConfirmed', function() {
-          // main.show();
-          // login.slideUp();
-             $state.go('Candidates.list')
-
-        });
-      }
-    }
-  }]);
-
 myApp.directive('autoComplete',['$timeout', '$cookieStore', '$http',function($timeout,$cookieStore,$http) {
     return {
           scope: {
