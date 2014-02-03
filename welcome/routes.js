@@ -14,6 +14,8 @@
         $stateProvider
           .state("home", {
             url: "/",
+            templateUrl:'security/security.loginpage.html',
+            controller: 'SecurityLoginCtrl'
           })
           .state('invalid', {
             url: '/invalid',

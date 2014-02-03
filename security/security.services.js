@@ -10,21 +10,6 @@
     ".expires":"Mon, 28 Oct 2013 06:53:32 GMT"
     */
 	this.loginSuccess = function (data) {
-      var myauth 
-      //alert("login success revcived")
-      for(var i=0;i<16;i++){
-        if(typeof myauth == "undefined")
-          myauth = data[i]
-        else
-          myauth=myauth+data[i]
-      }
-      console.log("authcode is here" + myauth)
-      console.log("Storing authcode to cookie")
-      RestMaster.updateAuthCode(myauth)
-
-      $cookieStore.put('authCode', myauth); 
-      $cookieStore.put('username', data.username); 
-      $cookieStore.put('status','')
       //reload the current state
       $state.go('.', {q: "TT"} , {reload: true});
   };
@@ -34,7 +19,7 @@
             return {
                 name: "Login",
                 module: "User",
-                templateUrl: 'security/security.login.html',
+                templateUrl: 'security/security.loginDialog.html',
                 controller: 'SecurityLoginCtrl',
                 message: 'User successfully logged in',
                 successFn: function (data) {
@@ -47,8 +32,8 @@
 });
 
 
-Application.Security.factory('securityService',['$resource','$http','appConstants',
-                    function ($resource,$http,appConstants) {
+Application.Security.factory('securityService',['$resource','$http','appConstants','$cookieStore',
+                    function ($resource,$http,appConstants,$cookieStore) {
     return{
         signIn : function(data){
             return $resource(appConstants.baseUrl + 'rest/auth').get(data);

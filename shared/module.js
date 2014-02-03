@@ -7,4 +7,8 @@ Application.Shared.value('genericModules', {
         'deleteDialogTitle': 'Confirm Delete',
         'dateDialog' : '/shared/generic.dateDialog.html'
 })
-.value('toastr', window.toastr);
+.value('toastr', window.toastr)
+.value('routerStates',{
+	'home':'home',
+	'Candidates':'Candidates.list'
+});

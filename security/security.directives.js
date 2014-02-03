@@ -23,4 +23,4 @@ Application.Security.directive('securityAuthHandler',  function(showDialog,secur
         });
       }
     }
-  });
+});
