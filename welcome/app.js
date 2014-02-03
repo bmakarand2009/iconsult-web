@@ -1,6 +1,6 @@
 /*******START OF app.js*******/
 // Make sure to include the `ui.router` module as a dependency
-var myApp = angular.module('myApp', ['ngResource','ui.router','http-auth-interceptor','ngCookies','ngRoute','iconsult.shared'])
+var myApp = angular.module('myApp', ['ngResource','ui.router','ui.router.state','http-auth-interceptor','ngCookies','ngRoute','iconsult.shared','iconsult.security'])
     .run(
     [        '$rootScope', '$state', '$stateParams',
         function ($rootScope,   $state,   $stateParams) {
@@ -16,7 +16,7 @@ var myApp = angular.module('myApp', ['ngResource','ui.router','http-auth-interce
 
 myApp.constant(
     'appConstants', {
-        baseUrl : '/iconsult/',
+        baseUrl : '/',
         candEntity: 'candidates',
         vendEntity: 'vendors'
 });

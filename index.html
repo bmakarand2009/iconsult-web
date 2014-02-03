@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="css/toastr.css" type="text/css">
 
     <!-- // <script type="text/javascript" src="js/lib/jquery/jquery-1.9.1.min.js"></script>  -->
-    <!-- // <script type="text/javascript" src="js/lib/angular/angular.min.js"></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
 <body> 
-<div ng-controller="ParentViewController" class="auth-demo-application waiting-for-angular">
+
+<div ng-controller="ParentViewController" class="security-auth-handler waiting-for-angular">
     <div id="app-header" ng-include="'shared/header.html'" ng-show="isValidUser()"></div>
     <!-- <div ng-include="'shared/leftmenu.html'"></div> -->
 
@@ -75,11 +75,13 @@
      <ui-view></ui-view> 
 </div> 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+  <!-- // <script type="text/javascript" src="js/lib/angular/angular.min.js"></script> -->
   <script type="text/javascript" src="assets/jquery.assets.min.js"></script>
   <script type="text/javascript" src="js/application.js"></script>
   <script type="text/javascript" src="assets/welcome.min.js"></script>
   <script type="text/javascript" src="assets/admin.min.js"></script>
   <script type="text/javascript" src="assets/shared.min.js"></script>
+  <script type="text/javascript" src="assets/security.min.js"></script>
 
   <script type="text/javascript" src="assets/vendor.min.js"></script> 
   <script type="text/javascript" src="assets/candidate.min.js"></script> 

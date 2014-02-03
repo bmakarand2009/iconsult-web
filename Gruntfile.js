@@ -1,6 +1,7 @@
 'use strict';
 module.exports = function(grunt) {
 // load all grunt tasks
+//grunt reference http://gregbabiars.com/blog/2013/08/04/using-grunt-as-your-front-end-dev-server/
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
@@ -13,14 +14,14 @@ module.exports = function(grunt) {
       dev: {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> version: <%= pkg.version %> \n author: <%= pkg.author %> */\n',
-          mangle: true,
+          mangle: false,
           //mangle:true,
-          compress: true, 
+          compress: false, 
           //compress:true,
           sourceMap: 'web-app/assets/sources.min.js.map',
           //delete preservecomments for prod
           preserveComments: 'all', 
-          beautify: false, 
+          beautify: true, 
         },
         files: {
           'assets/welcome.min.js': [
@@ -59,6 +60,14 @@ module.exports = function(grunt) {
             'utils/xeditable.js',
             'utils/ui-bootstrap-tpls-0.9.0.js',
           ],
+          'assets/security.min.js': [
+            'security/module.js',
+            'security/security.controllers.js',
+            'security/security.directives.js',
+            'security/security.services.js',
+          ],
+ 
+
 
         }
       },
@@ -94,7 +103,9 @@ module.exports = function(grunt) {
              'js/lib/angular/angular-resource.min.js',
              'js/lib/angular/angular-cookies.min.js',
              'js/lib/angular/angular-route.min.js',
-             'js/lib/angular-ui-router/release/angular-ui-router.min.js',
+             'js/lib/angular-ui-router/v0.28/angular-ui-router.js',
+
+             //'js/lib/angular-ui-router/release/angular-ui-router.min.js',
           ]
         }
       },
