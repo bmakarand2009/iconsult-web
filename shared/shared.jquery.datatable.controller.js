@@ -3,9 +3,9 @@
 //This service represents the ServierSide Paging of Jquery datatable but this is not upkept
 //with the logic and needs to be tested more thorughtly
 //servers side has been added though
-myApp.controller('ListServerPagingCtrl',['$scope','$location','$timeout','RestMaster','entDetails','$http','$compile',
+Application.shared.controller('ListServerPagingCtrl',['$scope','$location','$timeout','RestMaster','entDetails','$http','$compile',
                                    function($scope,$location,$timeout,RestMaster,entDetails,$http,$compile) {
-    $scope.dtable = new Object(); //placeholder for the jquery datatable object 
+    $scope.dtable = new Object(); //placeholder for the jquery datatable object
     $scope.options = {
         bProcessing: true,
         bServerSide: true,
@@ -18,13 +18,13 @@ myApp.controller('ListServerPagingCtrl',['$scope','$location','$timeout','RestMa
         aoColumns: [
                 {
                     "aTargets": [ "mycol1" ],
-                    "mData":"id",         
+                    "mData":"id",
                     "mRender": function ( id, type, full )  {
                            return  '<span ><input type=\"checkbox\" ng-click=\"isChkBoxSelected('+ id +') \" ></span> ';
                     }
                  },
                  {
-                    "mData":"name",            
+                    "mData":"name",
                     "aTargets": [ "mycol2" ],
                     "mRender": function ( name, type, full )  {
                         return  '<a href="'+name+'">' + name  + '</a>'
@@ -32,14 +32,14 @@ myApp.controller('ListServerPagingCtrl',['$scope','$location','$timeout','RestMa
 
                  },
                  {
-                    "mData":"id",            
+                    "mData":"id",
                     "aTargets": ["mycol3"],
                     "mRender": function ( id, type, full )  {
                            return '  <div class=\"supplierAction\"> \
                                      <a class=\"iconfa-eye-open\" ui-sref=\"Vendors.view({id:' + id +'})\" ></a> \
                                     <a class=\"iconfa-edit\" ui-sref=\"Vendors.edit({id:'+id + '})\"></a> \
                                     <a class=\"iconfa-trash\" ng-click=\"deleteRec(' +id + ')\" data-toggle=\"modal\"></a> \
-                                    </div>';  
+                                    </div>';
                     }
                  }
 
@@ -88,7 +88,7 @@ myApp.controller('ListServerPagingCtrl',['$scope','$location','$timeout','RestMa
 
 }]);
 
-myApp.controller('BulkRecDeleteCtrl', ['$scope', 'RestMaster', 'model', function ($scope, RestMaster, model) {
+Application.shared.controller('BulkRecDeleteCtrl', ['$scope', 'RestMaster', 'model', function ($scope, RestMaster, model) {
     $scope.entDetails = model.entDetails;
     $scope.selectedItems = model.selectedItems
     $scope.submit = function (successFn) {
@@ -102,7 +102,7 @@ myApp.controller('BulkRecDeleteCtrl', ['$scope', 'RestMaster', 'model', function
 }]);
 
 
-myApp.controller('ListClientPagingCtrl',['$scope','$location','$timeout','RestMaster','entDetails','tableDataService','$http','$compile','createDialog', 'genericModules',
+Application.shared.controller('ListClientPagingCtrl',['$scope','$location','$timeout','RestMaster','entDetails','tableDataService','$http','$compile','createDialog', 'genericModules',
                                    function($scope,$location,$timeout,RestMaster,entDetails,tableDataService,$http,$compile,createDialog,genericModules) {
     $scope.selectedItems = []
     $scope.checkedRows = []
@@ -124,7 +124,7 @@ myApp.controller('ListClientPagingCtrl',['$scope','$location','$timeout','RestMa
        $scope.disabledel = true
        $scope.options.aaData = RestMaster.listRecords(entDetails.name);
     }();
-   
+
     $scope.isChkBoxSelected = function(id) {
        console.log("cehckbox select" + id)
        var isAdded = false
@@ -145,13 +145,13 @@ myApp.controller('ListClientPagingCtrl',['$scope','$location','$timeout','RestMa
             $scope.disabledel = true
           }
         }
-        
+
         console.log("selected items list" + $scope.selectedItems + "and disabledel val is" + $scope.disabledel)
     }
 
     $scope.isListEmpty = function() {
         return $scope.disabledel;
-    }   
+    }
 
     $scope.bulkDelete = function(){
       var totalRec = $scope.selectedItems.length
@@ -172,15 +172,15 @@ myApp.controller('ListClientPagingCtrl',['$scope','$location','$timeout','RestMa
                         $scope.options.aaData = RestMaster.listRecords(entDetails.name)
                         $scope.isSelectAll = false
                         $scope.processCheckAll()
-                    }, 1000);    
-                    // $scope.statusMessage = "Records Deleted Successfully"   
+                    }, 1000);
+                    // $scope.statusMessage = "Records Deleted Successfully"
 
                 }
             }
         }, {
             model: { "selectedItems" : $scope.selectedItems, "entDetails" : entDetails}
         });
-      
+
     }
     $scope.$watch('searchText', function (val) {
         if (undefined == val)
@@ -202,7 +202,7 @@ myApp.controller('ListClientPagingCtrl',['$scope','$location','$timeout','RestMa
       jQuery.each($scope.options.aaData, function( index, value ) {
        // jQuery.each(window.oTable.fnSettings().aoData, function( index, value ) {
               console.log("value is"+ value.id)
-              $scope.checkedRows[value.id] = $scope.isSelectAll 
+              $scope.checkedRows[value.id] = $scope.isSelectAll
               $scope.selectedItems.push(value.id)
         })
         $scope.disabledel = !$scope.isSelectAll

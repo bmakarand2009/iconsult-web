@@ -1,6 +1,6 @@
 // variable sharing among controllers
 
-myApp.factory('tableDataService', ['appConstants',function (appConstants) {
+Application.shared.factory('tableDataService', ['appConstants',function (appConstants) {
 
   var candOptions = {
         bProcessing: true,
@@ -12,13 +12,13 @@ myApp.factory('tableDataService', ['appConstants',function (appConstants) {
         aoColumns: [
                 {
                     "aTargets": [ "mycol1" ],
-                    "mData":"id",         
+                    "mData":"id",
                     "mRender": function ( id, type, full )  {
                            return  '<span ><input type=\"checkbox\" ng-click=\"isChkBoxSelected('+ id +') \" ng-model=\"checkedRows['+id+']\" ></span> ';
                     }
                  },
                  {
-                    "mData":"name",            
+                    "mData":"name",
                     "aTargets": [ "mycol2" ],
                     "mRender": function ( name, type, full )  {
                         //return  '<a href="'+name+'">' + name  + '</a>'
@@ -30,14 +30,14 @@ myApp.factory('tableDataService', ['appConstants',function (appConstants) {
                  },
 
                  // {
-                 //    "mData":"id",            
+                 //    "mData":"id",
                  //    "aTargets": ["mycol3"],
                  //    "mRender": function ( id, type, full )  {
                  //           return '  <div class=\"supplierAction\"> \
                  //                     <a class=\"iconfa-eye-open\" ui-sref=\"Vendors.view({id:' + id +'})\" ></a> \
                  //                    <a class=\"iconfa-edit\" ui-sref=\"Vendors.edit({id:'+id + '})\"></a> \
                  //                    <a class=\"iconfa-trash\" ng-click=\"deleteRec(' +id + ')\" data-toggle=\"modal\"></a> \
-                 //                    </div>';  
+                 //                    </div>';
                  //    }
                  // }
 
@@ -54,7 +54,7 @@ myApp.factory('tableDataService', ['appConstants',function (appConstants) {
    }
 
 
-  return { 
+  return {
   	getOTableOptions: function(entName){
   		if(entName == appConstants.vendEntity){
   			return candOptions

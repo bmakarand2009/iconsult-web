@@ -1,11 +1,11 @@
-// AddNewRecords.js 
+// AddNewRecords.js
 
-myApp.controller('VendorAddController',['$scope','$stateParams','RestMaster','entDetails', 'sharedService','$cookieStore',
+Application.vendors.controller('VendorAddController',['$scope','$stateParams','RestMaster','entDetails', 'sharedService','$cookieStore',
         function($scope,$stateParams, RestMaster,entDetails,sharedService,$cookieStore) {
 
-        $scope.types 
+        $scope.types
         $scope.vendor = {
-            name :'' , 
+            name :'' ,
             address :'',
             location: { street:'', address:''},
             contacts:[
@@ -30,15 +30,15 @@ myApp.controller('VendorAddController',['$scope','$stateParams','RestMaster','en
           var viewst = entDetails.name+"view"
           RestMaster.createRecord(entDetails.name,$scope.vendor,viewst)
         }
-       
-       $scope.autoFillLocation = function(val) {  
+
+       $scope.autoFillLocation = function(val) {
           return sharedService.autoComplete(val).then(function(res){
             var addresses = [];
                 angular.forEach(res.data, function(item){
                   addresses.push(item);
                 });
                 return addresses;
-          });               
+          });
         };
 
 

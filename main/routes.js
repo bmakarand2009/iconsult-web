@@ -1,6 +1,6 @@
 
 /***********START OF states.js *******/
-  myApp.config(
+  Application.main.config(
     [          '$stateProvider', '$urlRouterProvider',
       function ($stateProvider,   $urlRouterProvider) {
          $urlRouterProvider
@@ -105,7 +105,7 @@
             //controller: 'ListPagingCtrl'
 
           })
-          .state('Vendors.edit',{ 
+          .state('Vendors.edit',{
             url:'/edit/:id',
             templateUrl:'vendors/vendors-edit.html'
 
@@ -115,6 +115,45 @@
             templateUrl:'vendors/vendors-add.html',
             controller:'VendorAddController'
           })
+
+
+          //PEOPLE
+          .state('People', {
+            abstract: true,
+            url: '/people',
+            templateUrl: 'people/people.html',
+            resolve: {
+                entDetails: ['appConstants',function(appConstants) {
+                  return {
+                    name: appConstants.peopleEntity
+                  }
+                }]
+            }
+          })
+          .state('People.list', {
+            url: '',
+            templateUrl: 'people/people.list.html',
+            controller: 'ListClientPagingCtrl'
+
+          })
+          .state('People.view',{
+            //url:'/view/:id',
+            url: '/{id:[0-9]{1,4}}',
+            templateUrl:'people/people.view.html',
+            //controller: 'ListPagingCtrl'
+
+          })
+          .state('People.edit',{
+            url:'/edit/:id',
+            templateUrl:'people/people.edit.html'
+
+          })
+          .state('People.add',{
+            url:'/add',
+            templateUrl:'people/people.add.html',
+            controller:'PeopleAddController'
+          })
+          //End of People
       }]);
 
 

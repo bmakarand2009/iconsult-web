@@ -2,9 +2,9 @@
 
 'use strict';
 
-myApp.controller('ParentViewController',['$scope','$cookieStore','$state','adminService','$http', 
+Application.admin.controller('ParentViewController',['$scope','$cookieStore','$state','adminService','$http',
     function($scope,$cookieStore,$state,adminService,$http) {
-   
+
     $scope.isLoggedIn = true
 
     $scope.$on('event:auth-invalidlogin', function() {
@@ -22,8 +22,8 @@ myApp.controller('ParentViewController',['$scope','$cookieStore','$state','admin
         $scope.resp =adminService.signOut();
 
         $scope.resp.$promise.then(function(data) {
-            $cookieStore.put('authCode', ''); 
-            $cookieStore.put('username', ''); 
+            $cookieStore.put('authCode', '');
+            $cookieStore.put('username', '');
             $cookieStore.put('status','Enter your credentials')
             console.log("user logged out")
             $scope.isLoggedIn = false
@@ -32,7 +32,7 @@ myApp.controller('ParentViewController',['$scope','$cookieStore','$state','admin
 
     }
 
-    $scope.autoFillJump = function(val) {   
+    $scope.autoFillJump = function(val) {
         return adminService.jumpToContact(val).then(function(res){
             var addresses = [];
             angular.forEach(res.data, function(item){

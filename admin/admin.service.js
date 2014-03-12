@@ -1,4 +1,4 @@
-myApp.factory('adminService',['$resource','$cookieStore', '$http','appConstants',
+Application.admin.factory('adminService',['$resource','$cookieStore', '$http','appConstants',
                     function ($resource,$cookieStore,$http,appConstants) {
     return{
         signIn : function(data){
@@ -6,7 +6,7 @@ myApp.factory('adminService',['$resource','$cookieStore', '$http','appConstants'
         },
         signOut : function(){
             var username = $cookieStore.get('username')
-            var params = { 
+            var params = {
                "username":username
             }
            return $resource(appConstants.baseUrl +'auth/logout').get(params);

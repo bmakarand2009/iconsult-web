@@ -1,5 +1,5 @@
 /******** start of sevices.js******/
-myApp.factory('RestMaster',['$resource','$location','$state','$timeout','$cookieStore','appConstants',
+Application.shared.factory('RestMaster',['$resource','$location','$state','$timeout','$cookieStore','appConstants',
                             function($resource,$location,$state,$timeout,$cookieStore,appConstants) {
     // return $resource('/FACTURA-T/suppliers/saveSupplier/:id');
     var authCode = 'uninit'
@@ -23,7 +23,7 @@ myApp.factory('RestMaster',['$resource','$location','$state','$timeout','$cookie
     }
 
     return{
-        
+
         updateAuthCode : function(aCode){
             authCode = aCode
         },
@@ -68,7 +68,7 @@ myApp.factory('RestMaster',['$resource','$location','$state','$timeout','$cookie
         },
         delRowFromDataTable : function(aEntity,aId,dtable){
             return getResource().remove({ids :aId,entityName:aEntity ,token:authCode},function(response){
-                $timeout(function(){ dtable.fnClearTable() }, 300);    
+                $timeout(function(){ dtable.fnClearTable() }, 300);
             });
         }
 

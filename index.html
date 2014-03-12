@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" ><!--<![endif]-->
+<html lang="en" ng-app="iconsult.main" ><!--<![endif]-->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -18,20 +18,23 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
-<body> 
+<body>
 <div ng-controller="ParentViewController" class="auth-demo-application waiting-for-angular">
     <div id="app-header" ng-include="'shared/header.html'" ng-show="isValidUser()"></div>
     <!-- <div ng-include="'shared/leftmenu.html'"></div> -->
 
- <div id="app-leftpanel" class="leftpanel w205" ng-show="isValidUser()" >       
+ <div id="app-leftpanel" class="leftpanel w205" ng-show="isValidUser()" >
      <div class="leftmenu w205">
       <ul class="nav nav-tabs nav-stacked">
         <li class="nav-header">Navigation</li>
         <li><a href="#/welcome"><span class="iconfa-home"></span>Welcome</a></li>
-       
+
        <!--class="dropdown active" makes it go levels -->
         <li ><a ui-sref="Candidates.list"><span class="iconfa-shopping-cart"></span>Candidates</a>
         </li>
+        <li ><a ui-sref="People.list"><span class="iconfa-shopping-cart"></span>People</a>
+        </li>
+
         <!-- add class="dropdown" to get the dropdown-->
         <li><a ui-sref="Vendors.list"><span class="iconfa-flag"></span>Vendors</a>
         </li>
@@ -57,7 +60,7 @@
         <br />
         <br />
         <hr>
-       
+
         <li class="dropdown" ><a href=""><span class="iconfa-book"></span>Recent Activity</a>
           <ul>
             <li><a href="404.html">Activity 1</a></li>
@@ -69,21 +72,23 @@
         </li>
       </ul>
     </div>
-    
+
   </div>
-    <!--leftmenu--> 
-     <ui-view></ui-view> 
-</div> 
+    <!--leftmenu-->
+     <ui-view></ui-view>
+</div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
   <script type="text/javascript" src="assets/jquery.assets.min.js"></script>
   <script type="text/javascript" src="js/application.js"></script>
-  <script type="text/javascript" src="assets/welcome.min.js"></script>
+  <script type="text/javascript" src="assets/main.min.js"></script>
   <script type="text/javascript" src="assets/admin.min.js"></script>
   <script type="text/javascript" src="assets/shared.min.js"></script>
 
-  <script type="text/javascript" src="assets/vendor.min.js"></script> 
-  <script type="text/javascript" src="assets/candidate.min.js"></script> 
-  
+  <script type="text/javascript" src="assets/vendor.min.js"></script>
+  <script type="text/javascript" src="assets/candidate.min.js"></script>
+<script type="text/javascript" src="assets/people.min.js"></script>
+
+
   <script type="text/javascript" src="js/directives/appDirectives.js"></script>
   <script type="text/javascript" src="assets/utils.min.js"></script>
   <script type="text/javascript" src="assets/angular.assets.min.js"></script>

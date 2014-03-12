@@ -13,43 +13,49 @@ module.exports = function(grunt) {
       dev: {
         options: {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> version: <%= pkg.version %> \n author: <%= pkg.author %> */\n',
-          mangle: true,
-          //mangle:true,
-          compress: true, 
-          //compress:true,
+          mangle: false,
+          compress: false,
           sourceMap: 'web-app/assets/sources.min.js.map',
           //delete preservecomments for prod
-          preserveComments: 'all', 
-          beautify: false, 
+          preserveComments: 'all',
+          beautify: true,
         },
         files: {
-          'assets/welcome.min.js': [
-            'welcome/app.js',
-            'welcome/routes.js',            
+          'assets/main.min.js': [
+            'main/app.js',
+            'main/routes.js',
           ],
           'assets/admin.min.js': [
+            'admin/module.js',
             'admin/admin.service.js',
             'admin/admin.login.controller.js',
-            'admin/admin.parent.controller.js',  
-            'admin/admin.mytest.controller.js',  
-                     
+            'admin/admin.parent.controller.js',
+            'admin/admin.mytest.controller.js',
+            'admin/admin.directives.js'
           ],
           'assets/shared.min.js': [
+            'shared/module.js',
             'shared/shared.restmaster.service.js',
             'shared/shared.tableData.service.js',
             'shared/shared.records.controller.js',
             'shared/shared.jquery.datatable.controller.js',
-            'shared/module.js',   
-            'shared/shared.service.js',    
-
+            'shared/shared.service.js',
+            'shared/shared.directives.js'
           ],
           'assets/vendor.min.js': [
+            'vendors/module.js',
             'vendors/vendors.controllers.js',
             'vendors/test.js'
           ],
           'assets/candidate.min.js': [
+            'candidates/module.js',
             'candidates/candidates.controllers.js',
           ],
+          'assets/people.min.js': [
+           'people/module.js',
+            'people/people.controllers.js',
+          ],
+
           'assets/utils.min.js': [
             'utils/http-auth-interceptor.js',
             'utils/createDialog.js',
@@ -71,7 +77,7 @@ module.exports = function(grunt) {
         files: {
           'assets/jquery.assets.min.js': [
             'js/lib/jquery/jquery-migrate-1.1.1.min.js',
-            'js/lib/jquery/jquery-ui-1.9.2.min.js',  
+            'js/lib/jquery/jquery-ui-1.9.2.min.js',
             'js/lib/bootstrap/bootstrap.min.js',
             'js/lib/jquery/jquery.cookie.js',
             'js/lib/jquery/jquery.uniform.min.js',
@@ -119,7 +125,7 @@ module.exports = function(grunt) {
             {
                 context: '/rest',
                 host: 'localhost',
-                port: 8080               
+                port: 8080
             },
             {
                 context: '/auth',
@@ -156,9 +162,9 @@ module.exports = function(grunt) {
   grunt.registerTask('libs', [
       'uglify:jquerylibs',
       'uglify:angularlibs',
-       
+
   ]);
-  
+
   grunt.registerTask('compile', [
       'uglify:dev'
   ]);

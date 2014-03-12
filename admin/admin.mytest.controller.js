@@ -1,15 +1,15 @@
 
 'use strict';
 
-myApp.controller('MyTestController',['$scope','$cookieStore','$state','signOutService','$http', 'createDialog', 'genericModules',
+Application.admin.controller('MyTestController',['$scope','$cookieStore','$state','signOutService','$http', 'createDialog', 'genericModules',
 	function($scope,$cookieStore,$state,signOutService,$http,createDialog,genericModules) {
-   
+
     $scope.isLoggedIn = true;
 
     $scope.parentTest = "hello khushi, how do u do i am fine how 'bout you? ";
     $scope.selected = undefined;
     $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
-  
+
 
 
     $scope.awesomeFunc = function() {
@@ -17,7 +17,7 @@ myApp.controller('MyTestController',['$scope','$cookieStore','$state','signOutSe
         toastr.success("Did you see Khushi's Awesomeness");
     };
 
-    $scope.getLocation = function(val) {	
+    $scope.getLocation = function(val) {
 	    return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {
 	      params: {
 	        address: val,
@@ -33,7 +33,7 @@ myApp.controller('MyTestController',['$scope','$cookieStore','$state','signOutSe
 	    });
   	};
 
- 	$scope.autoFillLocation = function(val) {	
+ 	$scope.autoFillLocation = function(val) {
         var baseurl ="/geo/findByCityOrZip?q="
     	var authCode = $cookieStore.get('authCode')
         var url = baseurl+ val +"&token="+authCode;
@@ -44,8 +44,8 @@ myApp.controller('MyTestController',['$scope','$cookieStore','$state','signOutSe
 	      	});
 	      	return addresses;
         });
-	
-	   
+
+
   	};
 
   	$scope.launchDateDialog = function(){
@@ -113,7 +113,7 @@ myApp.controller('MyTestController',['$scope','$cookieStore','$state','signOutSe
 
 
 
-myApp.controller('DialogTestCtrl',['$scope','model', function($scope,model) {
+Application.admin.controller('DialogTestCtrl',['$scope','model', function($scope,model) {
 	$scope.simpleVar = "test passed";
     $scope.submit = function (successFn) {
         successFn();

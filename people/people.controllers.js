@@ -1,8 +1,8 @@
-/***********START OF CandidatesCtrl.js *******/
+/***********START OF PeopleCtrl.js *******/
 
 'use strict';
 /* LIST CLIENTS PAGE  testing the comment*/
-Application.candidates.controller('CandidatesController',['$scope','entDetails', function($scope,entDetails) {
+Application.people.controller('PeoplesController',['$scope','entDetails', function($scope,entDetails) {
 
     $scope.$on('$viewContentLoaded', function() {
       //$(".assign-list").dataTable();
@@ -15,8 +15,8 @@ Application.candidates.controller('CandidatesController',['$scope','entDetails',
 
 }])
 
-Application.candidates.controller('CandidatesViewController',['$scope','$stateParams', 'entDetails',
-			function($scope,$stateParams,entDetails) {
+Application.people.controller('PeoplesViewController',['$scope','$stateParams', 'entDetails',
+            function($scope,$stateParams,entDetails) {
 
     $scope.$on('$viewContentLoaded', function() {
       //$(".assign-list").dataTable();
@@ -28,4 +28,4 @@ Application.candidates.controller('CandidatesViewController',['$scope','$statePa
     });
 
 }])
-/**********END OF CandidatesCtrl.js *******/
+/**********END OF PeopleCtrl.js *******/
